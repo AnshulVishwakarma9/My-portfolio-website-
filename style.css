@@ -1,103 +1,170 @@
+ nav {
+     background-color: #222;
+     color: white;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px 20px;
+     font-family: Arial, sans-serif;
+     font-size: 20px;
+     border-radius: 100px;
+     height: 80px;
+ }
 
-    * {
-  font-family: 'Poppins', sans-serif;
-}
 
-body {
-  background: linear-gradient(135deg, #0f129d, #2f3035);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) ;
-  color: #e8e8e8;
-}
+ nav ul {
+     list-style: none;
+     display: flex;
+     gap: 20px;
+ }
 
-/* NAVBAR */
-.navbar {
-  background: #222327 !important;
-}
+ ul li a {
+     color: white;
+     text-decoration: none;
+     transition: color 0.3s;
+ }
 
-/* HERO */
-.hero {
-  background: linear-gradient(135deg, #25262b, #2f3035);
-  color: #fff;
-  padding: 70px 60px;
-  text-align: center;
-}
+ ul li a:hover {
+     color: #ff9800;
+ }
 
-/* BUTTONS */
-.btn-custom {
-  background: #00aaff;
-  color: #fff;
-  border-radius: 30px;
-  padding: 10px 25px;
-  transition: 0.3s;
-}
+ ul li button {
+     background: none;
+     border: none;
+     cursor: pointer;
+     color: white;
+     transition: color 0.3s;
+ }
 
-.btn-custom:hover {
-  background: #0088cc;
-}
+ ul li button:hover {
+     color: #ff9800;
+ }
 
-/* SECTIONS */
-h2 {
-  color: #ffffff;
-}
-.skill-card p, .project-card p{
-  color: black  ;
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8) ;
-}
+ .logo {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-weight: bold;
+ }
 
-/* CARDS */
-.skill-card, .project-card {  
-  background: #E3EEF7;
-  border: none;  
-  border-radius: 12px;  
-  padding: 20px;  
-  transition: 0.3s;  
-  color: #222;
-  text-shadow:2px 2px 4px rgba(0,0,0,0.922) ;
-  box-shadow: 2px 4px 6px rgba(0,0,0,0.922);
-}
+ .nav-links {
+     list-style: none;
+     display: flex;
+     gap: 20px;
+ }
 
-.skill-card:hover, .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 20px rgba(0, 170, 255, 0.25);
-}
+ .nav-links li a {
+     color: white;
+     text-decoration: none;
+     font-size: 18px;
+ }
 
-/* LINKS */
-a {
-  
- text-shadow: 2px 2px 4px rgba(255, 255,255, 0.8) ;
-  text-decoration: none;
-  color: #00aaff;
-}
+ .menu-btn {
+     display: none;
+     font-size: 28px;
+     cursor: pointer;
+ }
 
-a:hover {
-  color: #33bbff;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); 
-  
-}
+ /* ------------ MOBILE VIEW ------------ */
+ @media (max-width: 768px) {
+     .menu-btn {
+         display: block;
+         /* Show hamburger */
+     }
 
-/* FOOTER */
-.footer {
-  margin-top: auto;
-  background: #0A1A4A;
-  color: #e8e8e8;
-  padding: 25px 15px;
-  text-align: center;
-  font-size: 15px;
-  letter-spacing: 0.3px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
+     .nav-links {
+         position: absolute;
+         top: 65px;
+         right: 20px;
+         background: #333;
+         width: 200px;
+         flex-direction: column;
+         padding: 15px;
+         gap: 15px;
+         display: none;
+         /* Hidden by default */
+         border-radius: 8px;
+     }
 
-.footer .tagline {
-  font-size: 14px;
-  opacity: 0.85;
-  margin-bottom: 6px;
-}
+     .nav-links.show {
+         display: flex;
+         /* Show dropdown when toggled */
+     }
+ }
 
-.footer .credit {
-  font-size: 13px;
-  opacity: 0.5;
-}
-.blueshadow{
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) ;
-}
-  
+ .dark-theme {
+     background-color: #121212;
+     color: #ffffff;
+ }
+
+ footer {
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     background-color: #222;
+     color: white;
+     padding: 20px;
+     text-align: center;
+     font-family: Arial, sans-serif;
+     margin-top: 40px;
+     display: absolute;
+ }
+
+ .footup {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     margin-bottom: 20px;
+
+ }
+
+ .social-icons a {
+     color: white;
+     margin: 0 10px;
+     text-decoration: none;
+     font-size: 20px;
+     transition: color 0.3s;
+     border-radius: 50%;
+     padding: 5px;
+ }
+
+ .social-icons a:hover {
+     color: #ff9800;
+     background-color: #444;
+ }
+
+
+ ul li button {
+     background: none;
+     border: none;
+     cursor: pointer;
+     color: inherit;
+     font: inherit;
+     padding: 0;
+ }
+
+ .pages {
+     list-style: none;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+ }
+
+ .pages ul li a {
+     color: white;
+     text-decoration: none;
+     font-size: large;
+
+ }
+
+ .pages ul li a:hover {
+     text-decoration: underline;
+ }
+
+ .tag h2 {
+     margin: 0;
+     font-size: 24px;
+     color: tomato;
+     text-shadow: 0px 3px 5px black;
+ }
