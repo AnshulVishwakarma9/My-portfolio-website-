@@ -8,7 +8,7 @@
      font-family: Arial, sans-serif;
      font-size: 20px;
      border-radius: 100px;
-     height: 80px;
+     height: 50px;
  }
 
 
@@ -26,7 +26,9 @@
 
  ul li a:hover {
      color: #ff9800;
- }
+     
+}
+
 
  ul li button {
      background: none;
@@ -132,7 +134,8 @@
  .social-icons a:hover {
      color: #ff9800;
      background-color: #444;
- }
+      
+}
 
 
  ul li button {
@@ -143,25 +146,22 @@
      font: inherit;
      padding: 0;
  }
+ .footer-pages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
- .pages {
-     list-style: none;
-     display: flex;
-     flex-direction: column;
-     gap: 10px;
- }
+.footer-pages li {
+  margin: 6px 0;
+}
 
- .pages ul li a {
-     color: white;
-     text-decoration: none;
-     font-size: large;
-
- }
-
- .pages ul li a:hover {
-     text-decoration: underline;
- }
-
+.footer-pages a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
  .tag h2 {
      margin: 0;
      font-size: 24px;
