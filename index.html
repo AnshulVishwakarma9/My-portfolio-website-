@@ -149,7 +149,7 @@
        HERO SECTION
        ======================== -->
     <main>
-      <section id="hero" class="hero-section d-flex align-items-center text-light mt-5 me-0 ms-0">
+      <section id="hero" class="hero-section d-flex align-items-center  text-light mt-5 me-0 ms-0">
         <div class="overlay"></div>
         <div class="container position-relative">
           <div class="row align-items-center">
@@ -433,16 +433,16 @@
         </div>
 
         <div class="col-12 col-md-6">
-          <form id="contactForm" novalidate>
+          <form id="contactForm" name="contact" method="POST" data-netlify="true" novalidate>
             <div class="mb-3">
               <label for="name" class="form-label small">Name</label>
-              <input type="text" class="form-control" id="name" required minlength="2" placeholder="Your full name">
+              <input type="text" class="form-control" id="name" name="name" required minlength="2" placeholder="Your full name" >
               <div class="invalid-feedback">Please enter your name (min 2 characters).</div>
             </div>
 
             <div class="mb-3">
               <label for="email" class="form-label small">Email</label>
-              <input type="email" class="form-control" id="email" required placeholder="you@example.com">
+              <input type="email" class="form-control" id="email" name="email" required placeholder="you@example.com" >
               <div class="invalid-feedback">Please enter a valid email address.</div>
             </div>
 
