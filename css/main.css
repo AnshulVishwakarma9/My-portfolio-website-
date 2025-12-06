@@ -89,6 +89,7 @@ body {
     overflow: hidden;
 }
 
+
 /* dark overlay for contrast */
 .hero-section .overlay {
     position: absolute;
@@ -102,6 +103,16 @@ body {
     z-index: 2;
     position: relative;
 }
+ /* useless */
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 
 /* animated headline words */
 .headline-animate {

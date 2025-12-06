@@ -14,16 +14,14 @@
 
   <meta name="author" content="Anshul Vishwakarma">
 
-
-  <link rel="apple-touch-icon" href="Assets/website-icon.png">
-  <link rel="shortcut icon" type="image/png" href="Assets/website-icon.png">
+  <link rel="icon" href="Assets/icon.png" type="image/png">
 
 
   <!-- Open Graph (OG) — For sharing on Facebook / LinkedIn -->
   <meta property="og:title" content="Anshul Vishwakarma">
   <meta property="og:description"
     content="Hello this is my portfolio website where you can find my projects, skills, and contact information.">
-  <meta property="og:image" content="your-image.jpg">
+  <meta property="og:image" content="Assets/website-icon.png">
   <meta property="og:url" content="https://nexavex.netlify.app">
   <meta property="og:type" content="website">
 
@@ -37,7 +35,9 @@
   <!-- Canonical Link (prevents duplicate SEO issues) -->
   <link rel="canonical" href="https://nexavex.netlify.app">
   <!-- CSS File -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/footer.css">
 
   <!-- Fonts (Google Fonts Example) -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -63,40 +63,44 @@
 </head>
 
 <body>
+  <section id="home">
+  <!-- ========================
+       NAVBAR SECTION
+       ======================== -->
   <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body-tertiary custom mt-3 fixed-top"
-    data-bs-theme="dark">
-    <div class="container-fluid">
+  data-bs-theme="dark">
+  <div class="container-fluid">
 
       <a class="navbar-brand" href="#">
         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
           class="bi bi-person-lines-fill me-2" viewBox="0 0 16 16">
           <path
             d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z" />
-        </svg>
+          </svg>
         Anshul Vishwakarma
       </a>
-
+      
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Projects</a>
+            <a class="nav-link" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Skills</a>
+            <a class="nav-link" href="#skills">Skills</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="ask.html">Contact</a>
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -109,30 +113,31 @@
                 <hr class="dropdown-divider">
               </li>
               <li><a class="dropdown-item" href="#">Resume <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                    height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
                     <path
-                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
                     <path
                       d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
-                  </svg></a></li>
+                    </svg></a></li>
               <li><a><button id="themeToggle" class="dropdown-item ">Theme
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                      class="bi bi-moon-stars" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                class="bi bi-moon-stars" viewBox="0 0 16 16">
                       <path
                         d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286" />
-                      <path
+                        <path
                         d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z" />
-                    </svg>
-                  </button></a>
+                      </svg>
+                    </button></a>
+                  </li>
+                  
+                </ul>
               </li>
-
-            </ul>
-          </li>
         </ul>
       </div>
     </div>
   </nav>
-
+  
+  
 
 
 
@@ -149,10 +154,10 @@
         <div class="row align-items-center">
           <div class="col-12 col-md-7">
             <h1 class="display-5 fw-bold hero-title">
+              <span class="headline-animate">Thingking</span>
               <span class="headline-animate">Designing</span>
-              <span class="headline-animate">Building</span>
-              <span class="headline-animate">Shipping</span>
-              <span class="headline-animate">Products</span>
+              <span class="headline-animate">Coding</span>
+              <span class="headline-animate">Monetizing</span>
               <small class="d-block mt-2 fs-6 text-muted">I craft fast, accessible and maintainable web
                 experiences.</small>
             </h1>
@@ -163,6 +168,7 @@
             <div class="mt-4">
               <a href="#projects" class="btn btn-primary btn-lg me-3 cta-btn">View Projects</a>
               <a href="#contact" class="btn btn-outline-light btn-lg">Get in Touch</a>
+            
             </div>
           </div>
 
@@ -182,6 +188,7 @@
 
       <!-- small decorative particle dots (pure CSS) -->
       <div class="particles" aria-hidden="true"></div>
+    </section>
     </section>
 
     <!-- ========================
@@ -207,15 +214,24 @@
               turning them into simple, elegant solutions.</p>
 
             <div class="mb-2">
-              <span class="badge bg-primary me-2 mb-2">JavaScript</span>
-              <span class="badge bg-secondary me-2 mb-2">TypeScript</span>
+              <span class="badge bg-danger me-2 mb-2">HTML</span>
+              <span class="badge bg-info text-dark me-2 mb-2">CSS</span>
+              <span class="badge bg-warning  text-dark me-2 mb-2">JavaScript</span>
               <span class="badge bg-success me-2 mb-2">React</span>
-              <span class="badge bg-info text-dark me-2 mb-2">Node.js</span>
-              <span class="badge bg-warning text-dark me-2 mb-2">Docker</span>
-              <span class="badge bg-dark me-2 mb-2">Postgres</span>
+              <span class="badge text-dark border me-2 mb-2">Node.js</span>
+              <span class="badge bg-dark me-2 mb-2">MySQL</span>
             </div>
 
             <a href="#projects" class="btn btn-outline-primary mt-3">See my work</a>
+          </div>
+          <div class="resume">
+              <!-- <a href="#projects" class="btn btn-primary btn-lg me-3 btn-lg ms-4 cta-btn">Resume<svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path
+                      d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                    <path
+                      d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                  </svg></a> -->
           </div>
         </div>
       </div>
@@ -227,8 +243,8 @@
     <section id="projects" class="py-5 bg-light">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-4">
-          <h2 class="h3 mb-0">Selected Projects</h2>
-          <p class="mb-0 text-muted small">Projects showcasing product thinking, code quality and visual polish.</p>
+          <h2 class="h3 mb-0">Top Selected Projects</h2>
+          <p class="mb-0 text-muted small">Projects : product thinking, code quality and visual polish.</p>
         </div>
 
         <div class="row g-4">
@@ -237,9 +253,9 @@
             <article class="project-card h-100 card border-0 shadow-sm overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder"
-                class="card-img-top" alt="Project 1">
+                class="card-img-top" alt="Dashboard">
               <div class="card-body">
-                <h3 class="h5 card-title">Project Alpha</h3>
+                <h3 class="h5 card-title">Dashboard</h3>
                 <p class="card-text text-muted small">A responsive analytics dashboard built for complex datasets with
                   realtime updates.</p>
                 <div class="mb-2">
@@ -256,9 +272,9 @@
             <article class="project-card h-100 card border-0 shadow-sm overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder"
-                class="card-img-top" alt="Project 2">
+                class="card-img-top" alt="E-commerce Platform">
               <div class="card-body">
-                <h3 class="h5 card-title">Project Beta</h3>
+                <h3 class="h5 card-title">E-commerce Platform</h3>
                 <p class="card-text text-muted small">E-commerce platform optimized for conversion and accessibility
                   across devices.</p>
                 <div class="mb-2">
@@ -275,9 +291,9 @@
             <article class="project-card h-100 card border-0 shadow-sm overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder"
-                class="card-img-top" alt="Project 3">
+                class="card-img-top" alt="Offline notes">
               <div class="card-body">
-                <h3 class="h5 card-title">Project Gamma</h3>
+                <h3 class="h5 card-title">Offline notes</h3>
                 <p class="card-text text-muted small">Mobile-first progressive web app with offline support and push
                   notifications.</p>
                 <div class="mb-2">
@@ -294,10 +310,10 @@
           <div class="col-12 col-md-6 col-xl-4">
             <article class="project-card h-100 card border-0 shadow-sm overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder"
-                class="card-img-top" alt="Project 4">
+                src="https://media.istockphoto.com/id/1177151633/vector/hud-time.webp?a=1&b=1&s=612x612&w=0&k=20&c=49KH4GtvxraVyeHbrJA1IJGjYa0bayqkUzTZqKbu86E="
+                class="card-img-top" alt="Internal Tooling">
               <div class="card-body">
-                <h3 class="h5 card-title">Project Delta</h3>
+                <h3 class="h5 card-title">Internal Tooling</h3>
                 <p class="card-text text-muted small">Internal tooling that reduced processing time by 60% through
                   optimized pipelines.</p>
                 <div class="mb-2">
@@ -313,9 +329,9 @@
             <article class="project-card h-100 card border-0 shadow-sm overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder"
-                class="card-img-top" alt="Project 5">
+                class="card-img-top" alt="Realtime Collaboration">
               <div class="card-body">
-                <h3 class="h5 card-title">Project Epsilon</h3>
+                <h3 class="h5 card-title">Realtime Collaboration</h3>
                 <p class="card-text text-muted small">Realtime collaboration tool with low-latency synchronization and
                   role-based access.</p>
                 <div class="mb-2">
@@ -330,10 +346,10 @@
           <div class="col-12 col-md-6 col-xl-4">
             <article class="project-card h-100 card border-0 shadow-sm overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder"
-                class="card-img-top" alt="Project 6">
+                src="https://media.istockphoto.com/id/1318164599/vector/a-package-passes-a-check.webp?a=1&b=1&s=612x612&w=0&k=20&c=4RyP3mqYGZ-uHg8Gqu83Diw0Iwi9492ZP5uzS6D-h7s="
+                class="card-img-top" alt="Experimentation Platform">
               <div class="card-body">
-                <h3 class="h5 card-title">Project Zeta</h3>
+                <h3 class="h5 card-title">Experimentation Platform</h3>
                 <p class="card-text text-muted small">An experimentation platform for A/B testing and feature flagging
                   across products.</p>
                 <div class="mb-2">
@@ -348,7 +364,7 @@
         </div>
       </div>
     </section>
-
+   
     <!-- ========================
          SERVICES SECTION
          ======================== -->
@@ -395,6 +411,7 @@
         </div>
       </div>
     </section>
+   
 
     <!-- ========================
          CONTACT SECTION
@@ -468,13 +485,13 @@
                 <p class="select m-0">Home</p>
               </a></li>
             <li><a href="#" class="text-light text-decoration-none d-block mb-1 ">
-                <p class="select m-0">Features</p>
+                <p class="select m-0">About</p>
               </a></li>
             <li><a href="#" class="text-light text-decoration-none d-block mb-1 ">
-                <p class="select m-0">Pricing</p>
+                <p class="select m-0">Projects</p>
               </a></li>
             <li><a href="#" class="text-light text-decoration-none d-block ">
-                <p class="select m-0">Contact</p>
+                <p class="select m-0">Skills</p>
               </a></li>
           </ul>
         </div>
@@ -538,7 +555,8 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
 
-  <script src="script.js"></script>
+  <script src="script/script.js"></script>
+  <script src="script/animation.js"></script>
 
 </body>
 
