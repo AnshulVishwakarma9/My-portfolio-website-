@@ -1,0 +1,54 @@
+/* body {
+  background:
+    url("https://www.transparenttextures.com/patterns/cubes.png"),
+    linear-gradient(135deg, #111, #222, #333);
+  background-size: auto, 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+body {
+  background: linear-gradient(120deg, #1e1e1e, #4e54c8, #8f94fb);
+  background-size: 300% 300%;
+  animation: gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} */
+body {
+  background: url("https://plus.unsplash.com/premium_photo-1670534332456-94584fd35d71?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBvcmZvbGlwJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D") no-repeat center center/cover fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.2)
+  );
+  z-index: -1;
+}
+
+
+
+/* glassmorphism card effect  */
+.glass-section {
+  background: rgba(255, 255, 255, 0.12); /* light transparent layer */
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 60px 40px;
+  margin: 0px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: transform .3s ease, box-shadow .3s ease;
+}

@@ -20,6 +20,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
 }
+
 /* Custom Navbar Styling for Scale/Zoom-in Effect */
 
 @media (max-width: 991.98px) {
@@ -28,22 +29,28 @@ body {
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh; /* Full viewport height */
-        background-color: rgba(33, 37, 41, 0.95); /* Semi-transparent dark overlay */
+        height: 100vh;
+        /* Full viewport height */
+        background-color: rgba(33, 37, 41, 0.95);
+        /* Semi-transparent dark overlay */
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Center links vertically */
-        align-items: center; /* Center links horizontally */
+        justify-content: center;
+        /* Center links vertically */
+        align-items: center;
+        /* Center links horizontally */
         z-index: 1040;
 
         opacity: 0;
         visibility: hidden;
-        transform: scale(0.8); /* Start smaller */
+        transform: scale(0.8);
+        /* Start smaller */
         transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0s linear 0.3s;
     }
 
     .navbar-collapse.collapsing {
-        height: auto !important; /* Override Bootstrap's default collapsing height */
+        height: auto !important;
+        /* Override Bootstrap's default collapsing height */
         opacity: 0;
         visibility: hidden;
         transform: scale(0.8);
@@ -52,23 +59,29 @@ body {
     .navbar-collapse.show {
         opacity: 1;
         visibility: visible;
-        transform: scale(1); /* Zoom to full size */
-        transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* Remove visibility delay */
+        transform: scale(1);
+        /* Zoom to full size */
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        /* Remove visibility delay */
     }
 
     .navbar-collapse .navbar-nav {
-        text-align: center; /* Center text within the full-screen menu */
+        text-align: center;
+        /* Center text within the full-screen menu */
         width: 100%;
     }
 
     .navbar-collapse .nav-item {
-        margin-bottom: 1rem; /* More space for full-screen links */
+        margin-bottom: 1rem;
+        /* More space for full-screen links */
     }
 
     .navbar-collapse .nav-link {
-        font-size: 1.5rem; /* Larger links for full-screen */
+        font-size: 1.5rem;
+        /* Larger links for full-screen */
         padding: 0.75rem 1rem;
-        color: var(--bs-white); /* Ensure visible on dark overlay */
+        color: var(--bs-white);
+        /* Ensure visible on dark overlay */
     }
 
     /* Keep the toggler visible above the menu */
@@ -103,7 +116,8 @@ body {
     z-index: 2;
     position: relative;
 }
- /* useless */
+
+/* useless */
 
 section {
     padding: 20px;
@@ -192,6 +206,85 @@ section {
     border-radius: .5rem;
 }
 
+/* ===== SKILLS ===== */
+/* Title */
+.section-title {
+    font-size: 2.4rem;
+    position: relative;
+}
+
+/* Skill Tabs */
+.skills-tabs {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skill-tab {
+    background: white;
+    border: 1px solid #dee2e6;
+    padding: 10px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.skill-tab.active {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    transform: scale(1.05);
+}
+
+/* Skill Item */
+.skill-item {
+    text-align: center;
+    transition: 0.4s ease;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.skill-item.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Icons */
+.skill-icon {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.skill-icon-img {
+    width: 55px;
+    height: 55px;
+
+}
+.shadow-green div:hover {
+    box-shadow: 0 8px 25px rgba(32, 179, 32, 0.55);
+}
+
+
+/* Dark-mode */
+html.dark-mode #skills {
+    background: #181818 !important;
+}
+
+html.dark-mode .skill-item {
+    background: #212121 !important;
+    color: #fff;
+}
+
+
 /* ===== PROJECT CARD ANIMATIONS ===== */
 .project-card {
     transform: translateY(36px) scale(.98);
@@ -215,7 +308,8 @@ section {
     height: 180px;
     object-fit: cover;
 }
-.profilepic{
+
+.profilepic {
     border-radius: 100%;
 }
 
@@ -227,12 +321,15 @@ section {
 
 .service-box:hover {
     transform: translateY(-8px) rotate(-.25deg);
-    box-shadow: 0 18px 30px rgba(13, 110, 253, 0.06);
+    box-shadow: 0 18px 30px rgba(15, 230, 69, 0.06);
+}
+.box-green:hover {
+    box-shadow: 0 18px 30px rgba(15, 230, 69, 0.25);
 }
 
 /* ===== CONTACT FORM ===== */
 #contactForm .form-control:focus {
-    box-shadow: 0 0 0 .15rem rgba(13, 110, 253, 0.12);
+    box-shadow: 0 0 0 .15rem rgba(15, 230, 69, 0.52);
 }
 
 /* responsive tweaks */

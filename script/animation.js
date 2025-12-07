@@ -26,6 +26,46 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 600);
     });
   });
+  //  skills Animation
+  /* ===== TAB SWITCHING ===== */
+const tabs = document.querySelectorAll(".skill-tab");
+const cards = document.querySelectorAll(".skill-card");
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    tabs.forEach((t) => t.classList.remove("active"));
+    tab.classList.add("active");
+
+    let target = tab.getAttribute("data-target");
+
+    cards.forEach((card) => {
+      if (card.classList.contains(target)) {
+        card.classList.remove("d-none");
+        setTimeout(() => card.querySelector(".skill-item").classList.add("visible"), 100);
+      } else {
+        card.classList.add("d-none");
+        card.querySelector(".skill-item").classList.remove("visible");
+      }
+    });
+  });
+});
+
+/* ===== SCROLL REVEAL ANIMATION ===== */
+const skillItems = document.querySelectorAll(".skill-item");
+
+const skillObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+
+skillItems.forEach((item) => skillObserver.observe(item));
+
 
   /* --------------------------
      Project cards: animate when entering viewport
