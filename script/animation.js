@@ -92,57 +92,30 @@ skillItems.forEach((item) => skillObserver.observe(item));
     projectObserver.observe(card);
   });
 
-  /* --------------------------
-     Simple contact form validation (HTML5 + custom)
-     -------------------------- */
-  var form = document.getElementById('contactForm');
-  var status = document.getElementById('formStatus');
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    // rely on native validity first
-    if (!form.checkValidity()) {
-      form.classList.add('was-validated');
-      status.textContent = 'Please correct the errors above.';
-      status.classList.remove('text-success');
-      status.classList.add('text-danger');
-      return;
-    }
+// google sheets form submission
 
-    // Additional basic checks (optional)
-    var name = document.getElementById('name').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var message = document.getElementById('message').value.trim();
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-    if (name.length < 2 || message.length < 10) {
-      form.classList.add('was-validated');
-      status.textContent = 'Please provide valid details.';
-      status.classList.remove('text-success');
-      status.classList.add('text-danger');
-      return;
-    }
+  const form = e.target;
 
-    // Simulate sending (since no backend). Replace with real API call as needed.
-    status.textContent = 'Sending message…';
-    status.classList.remove('text-danger');
-    status.classList.add('text-muted');
+  const formData = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value
+  };
 
-    // fake async send
-    setTimeout(function () {
-      form.reset();
-      form.classList.remove('was-validated');
-      status.textContent = 'Thanks — your message has been sent (demo).';
-      status.classList.remove('text-muted');
-      status.classList.add('text-success');
-    }, 900);
-  });
-
-  /* --------------------------
-     Small accessibility helper: add keyboard focus indicators for interactive elements
-     -------------------------- */
-  document.body.addEventListener('keyup', function (e) {
-    if (e.key === 'Tab') {
-      document.body.classList.add('keyboard-focus');
-    }
+  fetch("https://script.google.com/macros/s/AKfycbzlTHQ_zmCD9_gWIMxJ0D_d7hBHM1BljmLidGgsANzwkkxz1QErKqRaAEcuSvD00b36/exec", {
+    method: "POST",
+    body: JSON.stringify(formData)
+  })
+  .then(response => response.json())
+  .then(result => {
+    document.getElementById("formStatus").innerText = "Message sent successfully.";
+    form.reset();
+  })
+  .catch(error => {
+    document.getElementById("formStatus").innerText = "Error sending message.";
   });
 });
