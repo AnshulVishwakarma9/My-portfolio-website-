@@ -119,3 +119,4 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     document.getElementById("formStatus").innerText = "Error sending message.";
   });
 });
+});
