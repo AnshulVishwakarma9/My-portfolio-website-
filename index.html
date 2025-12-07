@@ -542,7 +542,7 @@
           </div>
 
           <div class="col-12 col-md-6">
-           <form id="contactForm" novalidate>
+           <form id="contactForm" action="https://script.google.com/macros/s/AKfycbzlTHQ_zmCD9_gWIMxJ0D_d7hBHM1BljmLidGgsANzwkkxz1QErKqRaAEcuSvD00b36/exec" method="POST" novalidate>
 
               <input type="hidden" name="form-name" value="contact" />
 
@@ -670,6 +670,26 @@
 
   <script src="script/script.js"></script>
   <script src="script/animation.js"></script>
+  
+    <script>
+      const scriptURL =                       
+      "https://script.google.com/macros/s/AKfycbxyv4ijv7azb3Me-hWfx3LJM9CHdPaNhCSzFHZL7SngfXI67LnJR7vhK2bKgHH43W8IyA/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        var formData = new FormData(form);
+        var ex = document.getElementById("ex").checked;
+        
+
+        fetch(scriptURL, { method: "POST", body: formData })
+          .then((response) => {
+            swal("Done", "Submitted Successfully.", "success");
+          })
+          .catch((error) => {
+            swal("Error", "Something went wrong. please try again!", "error");
+          });
+      });
+    </script>
   
 
 
